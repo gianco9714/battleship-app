@@ -10,13 +10,11 @@
 </div>
 <div class="shipControls" *ngIf="type === 'battleTop'">
     <button  mat-flat-button color="primary" class="turnIndicator" [ngClass]="{ active: !game.isHumanTurn }">
-       <span *ngIf="!player.allShipsAreOnFire() && !opponent.allShipsAreOnFire()">{{20 - player.firedBlockCountTotal}}</span>
         <span *ngIf="player.allShipsAreOnFire() || numberOfTurnsExceeds()">You lose</span>
         <span *ngIf="opponent.allShipsAreOnFire()">You win</span>
     </button>
     <button  mat-flat-button color="warn" class="turnCounter">Turn: <b>{{game.turnNumber || 0}}</b></button>
     <button  mat-flat-button color="primary" class="turnIndicator" [ngClass]="{ active: game.isHumanTurn }">
-       <span *ngIf="!player.allShipsAreOnFire() && !opponent.allShipsAreOnFire()">{{20 - opponent.firedBlockCountTotal}}</span>
         <span *ngIf="player.allShipsAreOnFire() ||numberOfTurnsExceeds()">Computer wins</span>
         <span *ngIf="opponent.allShipsAreOnFire()">Computer loses</span>
     </button>
