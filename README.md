@@ -1,7 +1,7 @@
 # BattleShip-App
 
 > Code challenge project for Tekton.
-> You can see a live demo [_https://gsullca-battleship.netlify.app/_](https://www.example.com). <!-- If you have the project hosted somewhere, include the link here. -->
+> You can see a live demo [_https://gsullca-battleship.netlify.app/_](https://gsullca-battleship.netlify.app). <!-- If you have the project hosted somewhere, include the link here. -->
 
 ## Development server
 
