@@ -1,0 +1,29 @@
+.container {
+  padding: 20px
+}
+
+table {
+  width: 100%;
+}
+
+.agregar-btn {
+  margin-bottom: 20px;
+}
+
+mat-card {
+  padding: 30px;
+  background-color: #1b1b1b;
+  color: white;
+}
+mat-card-subtitle {
+  color: rgba(255, 255, 255, 0.568);
+
+}
+table {
+  background-color: #1b1b1b;
+  border: white;
+
+  td, th {
+    color: white;
+  }
+}

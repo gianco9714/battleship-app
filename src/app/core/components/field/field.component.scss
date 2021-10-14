@@ -1,0 +1,57 @@
+.field {
+    display:inline-block;
+    font-size: 0;
+    margin: 5px 0;
+}
+.fieldBorder {
+    border-right: 20px solid #1b1b1b;
+}
+.row {
+    margin: 0;
+    padding: 0;
+    line-height: 0;
+}
+.square {
+    width:26px;
+    height:26px;
+    display:inline-block;
+    background-color: #40c4ff;
+    outline:1px solid #a2ffae;
+    vertical-align: middle;
+}
+.closedForShip {
+    background-color: #a2ffae !important;
+}
+
+.prePlacedShip {
+    background-color:#C3C379 !important;
+}
+
+.shipIsOnFire {
+    background-color: #C65B39 !important;
+}
+.fieldIsOnFire {
+    background-color: #C0CE33 !important;
+}
+
+[draggable=true] .part {
+    cursor: move;
+}
+
+.row-number{
+    color: white;
+    display: flex;
+    justify-content: space-around;
+}
+
+.column-number{
+    color: white;
+    position: absolute;
+    left: 35px;
+    max-height: 40px;
+}
+
+::ng-deep h5 {
+    margin: 0 0 7px !important;
+}
+

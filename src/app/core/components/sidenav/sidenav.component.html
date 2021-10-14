@@ -1,0 +1,46 @@
+<mat-drawer-container class="example-container">
+  <mat-drawer mode="side" opened>
+
+    <mat-nav-list>
+
+      <mat-list-item  routerLink="play-game">
+        <mat-icon mat-list-icon>
+          airplay
+         </mat-icon>
+        <div mat-line> Play Game </div>
+      </mat-list-item>
+
+      <mat-divider></mat-divider>
+
+      <mat-list-item  routerLink="configuration">
+        <mat-icon mat-list-icon>
+          settings </mat-icon>
+        <div mat-line> Configuration </div>
+      </mat-list-item>
+
+      <mat-divider></mat-divider>
+
+      <mat-list-item  routerLink="match-history">
+        <mat-icon mat-list-icon>
+          query_builder </mat-icon>
+        <div mat-line> Match History </div>
+      </mat-list-item>
+
+      <mat-divider></mat-divider>
+
+    </mat-nav-list>
+
+
+  </mat-drawer>
+
+
+  <mat-drawer-content>
+
+      <router-outlet></router-outlet>
+
+  </mat-drawer-content>
+
+
+</mat-drawer-container>
+
+

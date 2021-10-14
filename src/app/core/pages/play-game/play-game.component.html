@@ -1,0 +1,21 @@
+<div class="container">
+        <div class="fieldBg">
+                <app-controls-component [type]="'battleTop'"></app-controls-component>
+                <app-field-component
+                        [field]="player.field"
+                        [showShips]="true"
+                        [showFieldBorder]="true"
+                        [canFire]="false"
+                        [isBattleMode]="true">
+                </app-field-component>
+                <app-field-component
+                        [field]="opponent.field"
+                        [showShips]="player.allShipsAreOnFire()"
+                        [showFieldBorder]="false"
+                        [canFire]="true"
+                        [isBattleMode]="true">
+                </app-field-component>
+                <app-controls-component [type]="'battleBottom'"></app-controls-component>
+            </div>
+
+</div>

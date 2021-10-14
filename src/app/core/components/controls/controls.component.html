@@ -1,0 +1,28 @@
+<div class="shipControls" *ngIf="type === 'preparingTop'">
+    <button mat-flat-button color="primary"(click)="player.randomSet()">Random</button>
+    <button  disabled="true" mat-flat-button color="warn" routerLink="/battle" [disabled]="!player.allShipsArePlaced()">Start!</button>
+    <button disabled="true" mat-flat-button color="primary"(click)="player.clearField()" [disabled]="!player.shipsOnField">Clear</button>
+</div>
+<div class="shipControls" *ngIf="type === 'preparingBottom'">
+    <button  mat-flat-button disabled class="rotateHint">
+        Welcome to the fight. <b>Right click</b> to rotate.
+    </button>
+</div>
+<div class="shipControls" *ngIf="type === 'battleTop'">
+    <button  mat-flat-button color="primary" class="turnIndicator" [ngClass]="{ active: !game.isHumanTurn }">
+       <span *ngIf="!player.allShipsAreOnFire() && !opponent.allShipsAreOnFire()">{{20 - player.firedBlockCountTotal}}</span>
+        <span *ngIf="player.allShipsAreOnFire() || numberOfTurnsExceeds()">You lose</span>
+        <span *ngIf="opponent.allShipsAreOnFire()">You win</span>
+    </button>
+    <button  mat-flat-button color="warn" class="turnCounter">Turn: <b>{{game.turnNumber || 0}}</b></button>
+    <button  mat-flat-button color="primary" class="turnIndicator" [ngClass]="{ active: game.isHumanTurn }">
+       <span *ngIf="!player.allShipsAreOnFire() && !opponent.allShipsAreOnFire()">{{20 - opponent.firedBlockCountTotal}}</span>
+        <span *ngIf="player.allShipsAreOnFire() ||numberOfTurnsExceeds()">Computer wins</span>
+        <span *ngIf="opponent.allShipsAreOnFire()">Computer loses</span>
+    </button>
+</div>
+<div class="play" *ngIf="type === 'battleBottom'">
+    <button mat-flat-button color="primary" routerLink="/play-game">Play again!</button>
+    <button *ngIf="player.allShipsAreOnFire() || opponent.allShipsAreOnFire()" (click)="saveData()" mat-flat-button color="primary" routerLink="/play-game">Save Match</button>
+    <button *ngIf="numberOfTurnsExceeds()" (click)="saveData()" mat-flat-button color="primary" routerLink="/play-game">Save Match</button>
+</div>

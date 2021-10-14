@@ -1,0 +1,25 @@
+<div class="container">
+    <div class="preparingBg" (selectstart)="preventDefault($event)">
+
+        <div class="fieldBg">
+            <app-controls-component [type]="'preparingTop'"></app-controls-component>
+    
+            <app-field-component
+                    [field]="player.field"
+                    [showShips]="true"
+                    [showFieldBorder]="false"
+                    [canFire]="false"
+                    [isBattleMode]="false"
+                    (rotateShip)="rotateShipOnF($event)">
+            </app-field-component>
+    
+            <app-controls-component [type]="'preparingBottom'"></app-controls-component>
+        </div>
+    
+        <app-ships-component [shipsBySize]="player.shipsBySize"></app-ships-component>
+    </div>
+    
+</div>
+
+
+

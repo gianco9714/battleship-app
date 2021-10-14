@@ -1,0 +1,26 @@
+<div class="container">
+  <form [formGroup]="gameConfig" (submit)="submit()">
+    <mat-card>
+    <mat-card-title>Game Configuration</mat-card-title>
+      <mat-card-subtitle>Please Select Dificulty</mat-card-subtitle>
+      <div class="default-values-container">
+        <button mat-raised-button color="primary" class="element" type="submit"
+                (click)="gameConfig.value.numberOfTurnsDefault = easyModeTurns">Easy Mode</button>
+        <button mat-raised-button color="primary" class="element" type="submit"
+                (click)="gameConfig.value.numberOfTurnsDefault = normalModeTurns">Normal Mode</button>
+        <button mat-raised-button color="primary" class="element" type="submit"
+                (click)="gameConfig.value.numberOfTurnsDefault = hardModeTurns">Hard Mode</button>
+      </div>
+      <div>
+        <h2>Or</h2>
+      </div>
+    <mat-form-field appearance="fill">
+      <mat-label>Number of Turns</mat-label>
+      <input type="number" formControlName="numberOfTurns" matInput>
+    </mat-form-field>
+    <mat-card-actions>
+      <button mat-raised-button color="primary" type="submit" [disabled]="!gameConfig.value.numberOfTurns">Save</button>
+    </mat-card-actions>
+  </mat-card>
+  </form>
+</div>
